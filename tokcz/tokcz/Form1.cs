@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace tokcz
 {
@@ -18,7 +20,6 @@ namespace tokcz
         public Form1()
         {
             InitializeComponent();
-
         }
 
         public DataTable ReadCsv(string fileName)
@@ -59,6 +60,31 @@ namespace tokcz
         {
             int rowIndex = dgw.CurrentCell.RowIndex;
             dgw.Rows.RemoveAt(rowIndex);
+        }
+
+        private void buttonexcel_Click(object sender, EventArgs e)
+        {
+            if (dgw.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application xcelApp = new Microsoft.Office.Interop.Excel.Application();
+                xcelApp.Application.Workbooks.Add(Type.Missing);
+
+                for (int i = 1; i < dgw.Columns.Count +1; i++)
+                {
+                    xcelApp.Cells[1, i] = dgw.Columns[i-1].HeaderText;
+                }
+
+                for (int i = 0; i < dgw.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgw.Columns.Count; j++)
+                    {
+                        xcelApp.Cells[i + 2, j + 1] = dgw.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                xcelApp.Columns.AutoFit();
+                xcelApp.Visible = true;
+            }
         }
     }
 }

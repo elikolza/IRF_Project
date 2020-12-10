@@ -42,9 +42,9 @@
             this.buttoncsv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoncsv.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttoncsv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttoncsv.Location = new System.Drawing.Point(22, 251);
+            this.buttoncsv.Location = new System.Drawing.Point(22, 199);
             this.buttoncsv.Name = "buttoncsv";
-            this.buttoncsv.Size = new System.Drawing.Size(105, 50);
+            this.buttoncsv.Size = new System.Drawing.Size(122, 102);
             this.buttoncsv.TabIndex = 3;
             this.buttoncsv.Text = "CSV file beolvasása";
             this.buttoncsv.UseVisualStyleBackColor = false;
@@ -57,21 +57,25 @@
             this.buttonexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonexcel.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonexcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonexcel.Location = new System.Drawing.Point(392, 251);
+            this.buttonexcel.Location = new System.Drawing.Point(278, 199);
             this.buttonexcel.Name = "buttonexcel";
-            this.buttonexcel.Size = new System.Drawing.Size(105, 50);
+            this.buttonexcel.Size = new System.Drawing.Size(122, 102);
             this.buttonexcel.TabIndex = 6;
             this.buttonexcel.Text = "Formázott excel";
             this.buttonexcel.UseVisualStyleBackColor = false;
+            this.buttonexcel.Click += new System.EventHandler(this.buttonexcel_Click);
             // 
             // dgw
             // 
+            this.dgw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw.Location = new System.Drawing.Point(22, 319);
             this.dgw.Name = "dgw";
             this.dgw.RowHeadersWidth = 62;
             this.dgw.RowTemplate.Height = 28;
-            this.dgw.Size = new System.Drawing.Size(892, 457);
+            this.dgw.Size = new System.Drawing.Size(1587, 457);
             this.dgw.TabIndex = 8;
             // 
             // buttondelete
@@ -81,9 +85,9 @@
             this.buttondelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttondelete.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttondelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttondelete.Location = new System.Drawing.Point(150, 251);
+            this.buttondelete.Location = new System.Drawing.Point(150, 199);
             this.buttondelete.Name = "buttondelete";
-            this.buttondelete.Size = new System.Drawing.Size(105, 50);
+            this.buttondelete.Size = new System.Drawing.Size(122, 102);
             this.buttondelete.TabIndex = 9;
             this.buttondelete.Text = "Törlés";
             this.buttondelete.UseVisualStyleBackColor = false;
@@ -94,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(926, 788);
+            this.ClientSize = new System.Drawing.Size(1630, 788);
             this.Controls.Add(this.buttondelete);
             this.Controls.Add(this.dgw);
             this.Controls.Add(this.buttonexcel);
