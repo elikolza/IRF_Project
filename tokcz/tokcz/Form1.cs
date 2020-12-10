@@ -54,5 +54,11 @@ namespace tokcz
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttondelete_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgw.CurrentCell.RowIndex;
+            dgw.Rows.RemoveAt(rowIndex);
+        }
     }
 }

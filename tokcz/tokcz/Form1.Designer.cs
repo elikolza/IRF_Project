@@ -31,6 +31,7 @@
             this.buttoncsv = new System.Windows.Forms.Button();
             this.buttonexcel = new System.Windows.Forms.Button();
             this.dgw = new System.Windows.Forms.DataGridView();
+            this.buttondelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.buttonexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonexcel.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonexcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonexcel.Location = new System.Drawing.Point(147, 251);
+            this.buttonexcel.Location = new System.Drawing.Point(392, 251);
             this.buttonexcel.Name = "buttonexcel";
             this.buttonexcel.Size = new System.Drawing.Size(105, 50);
             this.buttonexcel.TabIndex = 6;
@@ -73,12 +74,28 @@
             this.dgw.Size = new System.Drawing.Size(892, 457);
             this.dgw.TabIndex = 8;
             // 
+            // buttondelete
+            // 
+            this.buttondelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttondelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttondelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttondelete.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttondelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttondelete.Location = new System.Drawing.Point(150, 251);
+            this.buttondelete.Name = "buttondelete";
+            this.buttondelete.Size = new System.Drawing.Size(105, 50);
+            this.buttondelete.TabIndex = 9;
+            this.buttondelete.Text = "Törlés";
+            this.buttondelete.UseVisualStyleBackColor = false;
+            this.buttondelete.Click += new System.EventHandler(this.buttondelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(926, 788);
+            this.Controls.Add(this.buttondelete);
             this.Controls.Add(this.dgw);
             this.Controls.Add(this.buttonexcel);
             this.Controls.Add(this.buttoncsv);
@@ -94,6 +111,7 @@
         private System.Windows.Forms.Button buttoncsv;
         private System.Windows.Forms.Button buttonexcel;
         private System.Windows.Forms.DataGridView dgw;
+        private System.Windows.Forms.Button buttondelete;
     }
 }
 
