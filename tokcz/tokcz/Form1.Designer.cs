@@ -47,6 +47,7 @@
             this.buttoncsv.TabIndex = 3;
             this.buttoncsv.Text = "CSV file beolvasása";
             this.buttoncsv.UseVisualStyleBackColor = false;
+            this.buttoncsv.Click += new System.EventHandler(this.buttoncsv_Click);
             // 
             // buttonexcel
             // 
