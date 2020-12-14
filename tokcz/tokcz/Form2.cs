@@ -137,7 +137,7 @@ namespace tokcz
             //Fejléc vízszintes elhelyzés 
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             //Fejléc kitöltése
-            headerRange.EntireColumn.AutoFit();
+            /*headerRange.EntireColumn.AutoFit();*/
             //Fejléc sormagasság
             headerRange.RowHeight = 45;
             //Fejléc kitöltési színe
@@ -145,9 +145,15 @@ namespace tokcz
             //Fejléc körüli szegély
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
             //Tábla körüli szegély
-
-                );
-
+            Excel.Range tableRange = xlSheet.get_Range(GetCell(1,1), GetCell(LastRowID, LastColID));
+            //Tábla körüli szegly formázás
+            tableRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+            //Első oszlop meghatározás
+            Excel.Range firstcolRange = xlSheet.get_Range(GetCell(2, 1), GetCell(LastRowID, 1));
+            //Első oszlop betűtípus
+            firstcolRange.Font.Bold = true;
+            //Első oszlop háttér
+            firstcolRange.Interior.Color = Color.LightCoral;
         }
 
         public Form2()
@@ -191,7 +197,7 @@ namespace tokcz
                 while(!sr.EndOfStream)
                 {
                     //Ez a sor egy sor nevű tömbbe olvassa be a fájl következő sorát úgy, hogy a pontosvesszők mentén feldarabolja azt
-                    string[] sor = sr.ReadLine().Split(';');
+                    string[] sor = sr.ReadLine().Split(',');
 
                     //Példányosítjuk a következő Data-t
                     Data d = new Data();
