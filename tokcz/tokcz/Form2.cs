@@ -18,7 +18,7 @@ namespace tokcz
         //Adatkötött lista
         BindingList<Data> datas = new BindingList<Data>();
 
-        /*/Microsoft Excel alkalmazás
+        //Microsoft Excel alkalmazás
         Excel.Application xlApp;
 
         //Munkafüzet 
@@ -62,7 +62,7 @@ namespace tokcz
             }
         }
 
-        private void CreateTabel()
+        private void CreateTable()
         {
             //Tömb létrehozása, mely tartalmazza a tábla fejléceit + egy extra oszlop fejlécét
             string[] headers = new string[]
@@ -76,28 +76,85 @@ namespace tokcz
                 "Female weekly",
             };
 
+            string[] content = { dataGridView.Columns.ToString()};
             //Tömb elemeinek kiírása a munkalap első sorába
-            for (int tömb = 1; tömb <= headers.Length; tömb++)
+            /*for (int tömb = 0; tömb <= headers.Length; tömb++)
             {
-                xlSheet.Cells[1, 1] = headers[tömb - 1];
+                xlSheet.Cells[1, tömb + 1] = headers[tömb];
+            }*/
+
+            for (int i = 1; i < dataGridView.Columns.Count + 1; i++)
+            {
+                xlSheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
             }
+            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                {
+                    if (dataGridView.Rows[i].Cells[j].Value != null)
+                    {
+                        xlSheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
+                    }
+                    else
+                    {
+                        xlSheet.Cells[i + 2, j + 1] = "";
+                    }
+                }
+            }
+        }
 
-            //Két dimenziós tömb létrehozása
+        private string GetCell(int x, int y)
+        {
+            string ExcelCoordinate = "";
+            int dividend = y;
+            int modulo;
 
-        }*/
+            while (dividend > 0)
+            {
+                modulo = (dividend - 1) % 26;
+                ExcelCoordinate = Convert.ToChar(65 + modulo).ToString() + ExcelCoordinate;
+                dividend = (int)((dividend - modulo) / 26);
+            }
+            ExcelCoordinate += x.ToString();
+
+            return ExcelCoordinate;
+        }
+
+
+        //Excel formázása
+        private void FormatExcel()
+        {
+            //Utolsó sor
+            int LastRowID = xlSheet.UsedRange.Rows.Count;
+            //Utolsó oszlop
+            int LastColID = xlSheet.UsedRange.Columns.Count;
+            //Fejléc meghatározása
+            Excel.Range headerRange = xlSheet.get_Range(GetCell(1,1), GetCell(1,LastColID));
+            //Fejléc betűtípusa dőlt
+            headerRange.Font.Italic = true;
+            //Fejléc függőleges elhelyzés
+            headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            //Fejléc vízszintes elhelyzés 
+            headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            //Fejléc kitöltése
+            headerRange.EntireColumn.AutoFit();
+            //Fejléc sormagasság
+            headerRange.RowHeight = 45;
+            //Fejléc kitöltési színe
+            headerRange.Interior.Color = Color.Aquamarine;
+            //Fejléc körüli szegély
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+            //Tábla körüli szegély
+
+                );
+
+        }
 
         public Form2()
         {
             InitializeComponent();
             //A "data" lista összekötése a DataGridView-val
             dataGridView.DataSource = datas;
-            /*object[,] values = new object[];
-            LoadData();
-            CreateExcel();*/
-        }
-
-        private void LoadData()
-        {
         }
 
         //file beolvasás eseménykezelője
@@ -206,38 +263,10 @@ namespace tokcz
 
         private void buttonxls_Click(object sender, EventArgs e)
         {
-            // creating Excel Application  
-            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-            // creating new WorkBook within Excel application  
-            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-            // creating new Excelsheet in workbook  
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            // see the excel sheet behind the program  
-            app.Visible = true;
-            // get the reference of first sheet. By default its name is Sheet1.  
-            // store its reference to worksheet  
-            worksheet = workbook.Sheets["Sheet1"];
-            worksheet = workbook.ActiveSheet;
-            // changing the name of active sheet  
-            worksheet.Name = "Exported from gridview";
-            // storing header part in Excel  
-            for (int i = 1; i < dataGridView.Columns.Count + 1; i++)
-            {
-                worksheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
-            }
-            // storing Each row and column value to excel sheet  
-            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
-            {
-                for (int j = 0; j < dataGridView.Columns.Count; j++)
-                {
-                    worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
-                }
-            }
-            // save the application  
-            workbook.SaveAs("c:\\output.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-            // Exit from the application  
-            app.Quit();
+            CreateExcel();
+            FormatExcel();
         }
+
     }
     
 }
