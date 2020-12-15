@@ -34,8 +34,8 @@ namespace tokcz
             comboBoxdate.ValueMember = "Év";
 
             //Betöltő függvények eredményeinek betöltése a megfelelő listába
-            Educations = GetEducations(@"C:\Users\admin\source\repos\IRF_Project\tokcz\suli.csv");
-            FinishProbabilities = GetFinishProbabilities(@"C:\Users\admin\source\repos\IRF_Project\tokcz\atlag.csv");
+            Educations = GetEducations(@"C:\Temp\suli.csv");
+            FinishProbabilities = GetFinishProbabilities(@"C:\Temp\atlag.csv");
         }
 
         //suli.CSV állomány felolvasása
@@ -61,7 +61,7 @@ namespace tokcz
             }
 
             //Ciklus zárása után visszatér a metódus a listával
-            return Educations;
+            return educations;
         }
 
         //atlag.CSV állomány felolvasása
@@ -81,13 +81,13 @@ namespace tokcz
                     {
                         Age = int.Parse(line[0]),
                         NbrOfTerms = int.Parse(line[1]),
-                        Probability = double.Parse(line[2]),
+                        Probability = double.Parse(line[2])
                     });
                 }
             }
 
             //Ciklus zárása után visszatér a metódus a listával
-            return FinishProbabilities;
+            return  finishProbabilities;
         }
 
         private void buttonstart_Click(object sender, EventArgs e)
