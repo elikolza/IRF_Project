@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using tokcz.Entities;
 
 namespace tokcz
 {
@@ -26,8 +27,6 @@ namespace tokcz
 
         //Munkalap munkafüzeten belül
         Excel.Worksheet xlSheet;
-
-        /*private List<String> filterConstraints;*/
 
         private void CreateExcel()
         {
@@ -122,7 +121,6 @@ namespace tokcz
             return ExcelCoordinate;
         }
 
-
         //Excel formázása
         private void FormatExcel()
         {
@@ -163,8 +161,6 @@ namespace tokcz
             InitializeComponent();
             //A "data" lista összekötése a DataGridView-val
             dataGridView.DataSource = datas;
-            /*populateCombo();
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;*/
         }
 
         //file beolvasás eseménykezelője
@@ -260,42 +256,8 @@ namespace tokcz
                     //Az újonnan létrehozott Datat-t hozzáadjuk a datas listához
                     datas.Add(d);
                 }
-
             }
-
         }
-
-       /* private void populateCombo()
-        {
-            filterConstraints = new List<string>
-            {
-                "None",
-                "ALL OCCUPATIONS",
-                "MANAGEMENT",
-                "BUSINESS",
-                "COMPUTATIONAL",
-                "SCIENCE",
-                "SOCIAL SERVICE",
-                "LEGAL",
-                "EDUCATION",
-                "HEALTHCARE PROFESSIONAL",
-                "HEALTHCARE SUPPORT",
-                "PROTECTIVE SERVICE",
-                "CULINARY",
-                "GROUNDSKEEPING",
-                "SERVICE",
-                "SALES",
-                "OFFICE",
-                "AGRICULTURAL",
-                "CONSTRUCTION",
-                "MAINTENANCE",
-                "PRODUCTION",
-                "AGRICULTURAL",
-                "TRANSPORTATION",
-            };
-
-            comboBox1.DataSource = filterConstraints;
-        }*/
 
         private void buttondelete_Click(object sender, EventArgs e)
         {
@@ -309,24 +271,17 @@ namespace tokcz
             FormatExcel();
         }
 
-        /*private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedItem = comboBox1.SelectedItem.ToString();
-                if (selectedItem != "None")
-                {
-                    dataGridView.DataSource = datas;
-                }
-                else
-                {
-                    dataGridView.DataSource = datas;
-                }
-        }*/
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string oszlop, szures;
             oszlop = textBox1.Text;
             szures = textBox2.Text;
+        }
+
+        private void buttonmikro_Click(object sender, EventArgs e)
+        {
+            Form3 nf = new Form3();
+            nf.Show();
         }
     }
 }

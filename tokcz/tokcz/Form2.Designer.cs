@@ -37,6 +37,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonmikro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,12 +145,28 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "label3";
             // 
+            // buttonmikro
+            // 
+            this.buttonmikro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonmikro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonmikro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonmikro.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonmikro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonmikro.Location = new System.Drawing.Point(692, 125);
+            this.buttonmikro.Name = "buttonmikro";
+            this.buttonmikro.Size = new System.Drawing.Size(132, 102);
+            this.buttonmikro.TabIndex = 18;
+            this.buttonmikro.Text = "Mikroszimuláció";
+            this.buttonmikro.UseVisualStyleBackColor = false;
+            this.buttonmikro.Click += new System.EventHandler(this.buttonmikro_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(926, 788);
+            this.Controls.Add(this.buttonmikro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -179,5 +196,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonmikro;
     }
 }
