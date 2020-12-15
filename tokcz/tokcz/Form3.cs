@@ -17,6 +17,8 @@ namespace tokcz
         //Adatok betöltése
         List<Education> Educations = new List<Education>();
         List<FinishProbability> FinishProbabilities = new List<FinishProbability>();
+        
+        //Férfi és női lélekszámok tárolásásra alkalmas lista létrehozása
         List<int> NbrOfMalesInYears = new List<int>();
         List<int> NbrOfFemalesInYears = new List<int>();
 
@@ -31,14 +33,20 @@ namespace tokcz
         private void Simulation()
         {
             //Betöltő függvények eredményeinek betöltése a megfelelő listába
-            Educations = GetEducations(@"C:\Temp\suli.csv");
+            //Futtatáskor a Browse gomb feletti TextBoxból veszi a fájlnevet
+            Educations = GetEducations(@textBoxfile.Text.ToString());
             FinishProbabilities = GetFinishProbabilities(@"C:\Temp\atlag.csv");
+
+            //Záróév megváltoztatása
             for (int i = 1965; i < numericUpDown1.Value; i++)
             {
+                //Végigmegyünk a hallgatók összes egyedén
                 for (int j = 0; j < Educations.Count; j++)
                 {
                     StudStep(i, Educations[j]);
                 }
+
+                //Minden év végén lekérdezzük a két csoport egyedszámát
                 int NbrOfMales = (from x in Educations
                                   where x.Gender == Gender.Male && x.IsPupil
                                   select x).Count();
@@ -46,6 +54,7 @@ namespace tokcz
                                    where x.Gender == Gender.Female && x.IsPupil
                                    select x).Count();
                 Console.WriteLine(string.Format("Év:{0} Fiúk:{1} Lányok:{2}", i, NbrOfMales, NBOfFemales));
+                //Lélekszámok tárolásásra alkalmas listák adatokkal való feltöltése
                 NbrOfMalesInYears.Add(NbrOfMales);
                 NbrOfFemalesInYears.Add(NBOfFemales);
             }
@@ -126,9 +135,10 @@ namespace tokcz
 
         private void DisplayResults()
         {
+            //Szimuláció évein végigmegyünk
             for (int years = 1965; years < numericUpDown1.Value; years++)
             {
-                textBoxdatas.Text += "Szimulációs év: " + years + "\n \t Fiúk: " +
+                richTextBox1.Text += "Szimulációs év: " + years + "\n \t Fiúk: " +
                                       NbrOfMalesInYears[years - 1965] + "\n \t Lányok: " +
                                       NbrOfFemalesInYears[years - 1965] + "\n \n";
             }
@@ -136,15 +146,17 @@ namespace tokcz
 
         private void buttonstart_Click(object sender, EventArgs e)
         {
+            //Szimuláció indítása előtt a RichTextBox és a lélekszám listák tartalmainak ürítése
             NbrOfMalesInYears.Clear();
             NbrOfFemalesInYears.Clear();
-            textBoxdatas.Clear();
+            richTextBox1.Clear();
             Simulation();
             DisplayResults();
         }
 
         private void buttonbrowse_Click(object sender, EventArgs e)
         {
+            //Ok gomb lenyomása után a felette lévő Textboxba kerül a suli fájl elérési útvonala
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "CSV files (*.csv)|*.csv";
             if (ofd.ShowDialog() == DialogResult.OK)
