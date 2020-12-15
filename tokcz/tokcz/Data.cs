@@ -8,12 +8,8 @@ namespace tokcz
 {
     class Data
     {
-        public string Occupation { get; set; }
-        public int All_workers { get; set; }
-        public int All_weekly { get; set; }
-        public int Male_workers { get; set; }
-        public int Male_weekly { get; set; }
-        public int Female_workers { get; set; }
-        public int Female_weekly { get; set; }
+        public int Rangsor { get; set; }
+        public string Intézmény { get; set; }
+        public string Rövidítés { get; set; }
     }
 }

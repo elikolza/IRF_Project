@@ -33,10 +33,6 @@
             this.buttondelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonxls = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonmikro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +57,7 @@
             this.buttoncsv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoncsv.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttoncsv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttoncsv.Location = new System.Drawing.Point(12, 126);
+            this.buttoncsv.Location = new System.Drawing.Point(56, 135);
             this.buttoncsv.Name = "buttoncsv";
             this.buttoncsv.Size = new System.Drawing.Size(122, 102);
             this.buttoncsv.TabIndex = 4;
@@ -76,7 +72,7 @@
             this.buttondelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttondelete.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttondelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttondelete.Location = new System.Drawing.Point(406, 126);
+            this.buttondelete.Location = new System.Drawing.Point(194, 135);
             this.buttondelete.Name = "buttondelete";
             this.buttondelete.Size = new System.Drawing.Size(122, 102);
             this.buttondelete.TabIndex = 10;
@@ -103,47 +99,13 @@
             this.buttonxls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonxls.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonxls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonxls.Location = new System.Drawing.Point(552, 126);
+            this.buttonxls.Location = new System.Drawing.Point(336, 135);
             this.buttonxls.Name = "buttonxls";
             this.buttonxls.Size = new System.Drawing.Size(122, 102);
             this.buttonxls.TabIndex = 12;
             this.buttonxls.Text = "Excel";
             this.buttonxls.UseVisualStyleBackColor = false;
             this.buttonxls.Click += new System.EventHandler(this.buttonxls_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(259, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(259, 201);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 207);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "label3";
             // 
             // buttonmikro
             // 
@@ -152,7 +114,7 @@
             this.buttonmikro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonmikro.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonmikro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonmikro.Location = new System.Drawing.Point(692, 125);
+            this.buttonmikro.Location = new System.Drawing.Point(478, 135);
             this.buttonmikro.Name = "buttonmikro";
             this.buttonmikro.Size = new System.Drawing.Size(132, 102);
             this.buttonmikro.TabIndex = 18;
@@ -167,10 +129,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(926, 788);
             this.Controls.Add(this.buttonmikro);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonxls);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttondelete);
@@ -192,10 +150,6 @@
         private System.Windows.Forms.Button buttondelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonxls;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonmikro;
     }
 }

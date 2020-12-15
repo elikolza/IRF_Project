@@ -68,13 +68,9 @@ namespace tokcz
             //Tömb létrehozása, mely tartalmazza a tábla fejléceit + egy extra oszlop fejlécét
             string[] headers = new string[]
             {
-                "Occupation",
-                "All workers",
-                "All weekly",
-                "Male workers",
-                "Male weekly",
-                "Female workers",
-                "Female weekly",
+                "Rang",
+                "Intézmény",
+                "Rövidítés",
             };
 
             string[] content = { dataGridView.Columns.ToString()};
@@ -201,83 +197,36 @@ namespace tokcz
 
                     //Példányosítjuk a következő Data-t
                     Data d = new Data();
-
-                    d.Occupation = sor[0];
-
                     try
                     {
-                        d.All_workers = int.Parse(sor[1]);
+                        d.Rangsor = int.Parse(sor[0]);
                     }
                     catch
-                    {
+                    {}
+                    d.Intézmény = sor[1];
+                    d.Rövidítés = sor[2];
 
-                    }
-
-                    try
-                    {
-                        d.All_weekly = int.Parse(sor[2]);
-                    }
-                    catch
-                    {
-
-                    }
-                    try
-                    {
-                        d.Male_workers = int.Parse(sor[3]);
-                    }
-                    catch
-                    {
-
-                    }
-                    try
-                    {
-                        d.All_weekly = int.Parse(sor[4]);
-                    }
-                    catch
-                    {
-
-                    }
-                    try
-                    {
-                        d.Female_workers = int.Parse(sor[5]);
-                    }
-                    catch
-                    {
-
-                    }
-                    try
-                    {
-                        d.Female_weekly = int.Parse(sor[6]);
-                    }
-                    catch
-                    {
-
-                    }
                     //Az újonnan létrehozott Datat-t hozzáadjuk a datas listához
                     datas.Add(d);
                 }
             }
         }
 
+        //Törlés
         private void buttondelete_Click(object sender, EventArgs e)
         {
             int rowIndex = dataGridView.CurrentCell.RowIndex;
             dataGridView.Rows.RemoveAt(rowIndex);
         }
 
+        //Excel
         private void buttonxls_Click(object sender, EventArgs e)
         {
             CreateExcel();
             FormatExcel();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string oszlop, szures;
-            oszlop = textBox1.Text;
-            szures = textBox2.Text;
-        }
-
+        //Mikroszimuláció
         private void buttonmikro_Click(object sender, EventArgs e)
         {
             Form3 nf = new Form3();

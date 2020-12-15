@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxdate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxfile = new System.Windows.Forms.TextBox();
             this.textBoxdatas = new System.Windows.Forms.TextBox();
             this.buttonsave = new System.Windows.Forms.Button();
             this.buttonbrowse = new System.Windows.Forms.Button();
             this.buttonstart = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -48,15 +49,6 @@
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Záróév";
-            // 
-            // comboBoxdate
-            // 
-            this.comboBoxdate.FormattingEnabled = true;
-            this.comboBoxdate.Location = new System.Drawing.Point(100, 25);
-            this.comboBoxdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBoxdate.Name = "comboBoxdate";
-            this.comboBoxdate.Size = new System.Drawing.Size(134, 28);
-            this.comboBoxdate.TabIndex = 9;
             // 
             // label1
             // 
@@ -131,23 +123,31 @@
             this.buttonstart.UseVisualStyleBackColor = false;
             this.buttonstart.Click += new System.EventHandler(this.buttonstart_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(102, 26);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown1.TabIndex = 15;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(926, 788);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.buttonsave);
             this.Controls.Add(this.buttonbrowse);
             this.Controls.Add(this.buttonstart);
             this.Controls.Add(this.textBoxdatas);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxfile);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulation";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,12 +156,12 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxdate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxfile;
         private System.Windows.Forms.TextBox textBoxdatas;
         private System.Windows.Forms.Button buttonsave;
         private System.Windows.Forms.Button buttonbrowse;
         private System.Windows.Forms.Button buttonstart;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
