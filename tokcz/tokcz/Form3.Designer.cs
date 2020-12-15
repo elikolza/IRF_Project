@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxfile = new System.Windows.Forms.TextBox();
             this.textBoxdatas = new System.Windows.Forms.TextBox();
-            this.buttonsave = new System.Windows.Forms.Button();
             this.buttonbrowse = new System.Windows.Forms.Button();
             this.buttonstart = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -78,28 +77,13 @@
             this.textBoxdatas.Size = new System.Drawing.Size(835, 650);
             this.textBoxdatas.TabIndex = 11;
             // 
-            // buttonsave
-            // 
-            this.buttonsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonsave.Font = new System.Drawing.Font("Calibri", 8F);
-            this.buttonsave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonsave.Location = new System.Drawing.Point(722, 61);
-            this.buttonsave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonsave.Name = "buttonsave";
-            this.buttonsave.Size = new System.Drawing.Size(80, 35);
-            this.buttonsave.TabIndex = 14;
-            this.buttonsave.Text = "Mentés";
-            this.buttonsave.UseVisualStyleBackColor = false;
-            this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
-            // 
             // buttonbrowse
             // 
             this.buttonbrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonbrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonbrowse.Font = new System.Drawing.Font("Calibri", 8F);
             this.buttonbrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonbrowse.Location = new System.Drawing.Point(447, 58);
+            this.buttonbrowse.Location = new System.Drawing.Point(602, 61);
             this.buttonbrowse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonbrowse.Name = "buttonbrowse";
             this.buttonbrowse.Size = new System.Drawing.Size(112, 35);
@@ -114,7 +98,7 @@
             this.buttonstart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonstart.Font = new System.Drawing.Font("Calibri", 8F);
             this.buttonstart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonstart.Location = new System.Drawing.Point(568, 58);
+            this.buttonstart.Location = new System.Drawing.Point(722, 56);
             this.buttonstart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonstart.Name = "buttonstart";
             this.buttonstart.Size = new System.Drawing.Size(146, 38);
@@ -137,7 +121,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(926, 788);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.buttonsave);
             this.Controls.Add(this.buttonbrowse);
             this.Controls.Add(this.buttonstart);
             this.Controls.Add(this.textBoxdatas);
@@ -159,7 +142,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxfile;
         private System.Windows.Forms.TextBox textBoxdatas;
-        private System.Windows.Forms.Button buttonsave;
         private System.Windows.Forms.Button buttonbrowse;
         private System.Windows.Forms.Button buttonstart;
         private System.Windows.Forms.NumericUpDown numericUpDown1;

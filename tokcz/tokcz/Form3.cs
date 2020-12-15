@@ -31,7 +31,7 @@ namespace tokcz
         private void Simulation()
         {
             //Betöltő függvények eredményeinek betöltése a megfelelő listába
-            Educations = GetEducations(@"C:\Temp\atlag.csv");
+            Educations = GetEducations(@"C:\Temp\suli.csv");
             FinishProbabilities = GetFinishProbabilities(@"C:\Temp\atlag.csv");
             for (int i = 1965; i < numericUpDown1.Value; i++)
             {
@@ -150,16 +150,6 @@ namespace tokcz
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 textBoxfile.Text = ofd.FileName;
-            }
-        }
-
-        private void buttonsave_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            if (sfd.ShowDialog() != DialogResult.OK) return;
-            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
-            {
-                sw.WriteLine(textBoxdatas.Text);
             }
         }
     }
