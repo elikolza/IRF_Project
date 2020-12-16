@@ -33,7 +33,6 @@ namespace tokcz
         private void Simulation()
         {
             //Betöltő függvények eredményeinek betöltése a megfelelő listába
-            //Futtatáskor a Browse gomb feletti TextBoxból veszi a fájlnevet
             Educations = GetEducations(@"C:\temp\suli.csv");
             FinishProbabilities = GetFinishProbabilities(@"C:\temp\atlag.csv");
 
