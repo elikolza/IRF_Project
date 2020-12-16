@@ -7,9 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Alias
 using System.Windows.Forms;
-//Technikai könyvtár
 using tokcz.Entities;
 
 namespace tokcz
@@ -113,13 +111,14 @@ namespace tokcz
         {
             //Ha nem tanuló már, ugrunk a következő lépésre
             if (!education.IsPupil) return;
-            int age = (int)(year - education.StartYear);
+            //Adott személy félévének száma a sulikezdés éve alapján
+            int trm = (int)(year - education.StartYear);
 
             //Iskola befejezésének valószínűség kikeresése
             if (education.IsPupil)
             {
                 double Probability = (from x in FinishProbabilities
-                                      where x.Age == age
+                                      where x.NbrOfTerms == trm
                                       select x.P).FirstOrDefault();
 
                 //Befejezik-e az iskolát?
