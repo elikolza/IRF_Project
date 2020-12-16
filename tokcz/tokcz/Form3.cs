@@ -117,9 +117,10 @@ namespace tokcz
             //Iskola befejezésének valószínűség kikeresése
             if (education.IsPupil)
             {
+                //LinQ
                 double Probability = (from x in FinishProbabilities
                                       where x.NbrOfTerms == trm
-                                      select x.P).FirstOrDefault();
+                                      select x.P).FirstOrDefault();//Ha valahol hiányozna az adat
 
                 //Befejezik-e az iskolát?
                 if (rng.NextDouble() <= Probability)
