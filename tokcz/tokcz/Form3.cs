@@ -7,7 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//Alias
 using System.Windows.Forms;
+//Technikai könyvtár
 using tokcz.Entities;
 
 namespace tokcz

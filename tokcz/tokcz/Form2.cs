@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Alias
 using Excel = Microsoft.Office.Interop.Excel;
+//Technikai könyvtár
 using System.Reflection;
 using tokcz.Entities;
 
@@ -63,6 +65,7 @@ namespace tokcz
             }
         }
 
+        //Adatok exportálása
         private void CreateTable()
         {
             //Tömb létrehozása, mely tartalmazza a tábla fejléceit + egy extra oszlop fejlécét
@@ -74,16 +77,14 @@ namespace tokcz
             };
 
             string[] content = { dataGridView.Columns.ToString()};
-            //Tömb elemeinek kiírása a munkalap első sorába
-            /*for (int tömb = 0; tömb <= headers.Length; tömb++)
-            {
-                xlSheet.Cells[1, tömb + 1] = headers[tömb];
-            }*/
 
+            //Tömb elemeinek kiírása a munkalap első sorába
             for (int i = 1; i < dataGridView.Columns.Count + 1; i++)
             {
+                //A1 cellába érték írás
                 xlSheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
             }
+            //DataGridView adatainak feltöltése
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
             {
                 for (int j = 0; j < dataGridView.Columns.Count; j++)
@@ -100,6 +101,7 @@ namespace tokcz
             }
         }
 
+        //Excel koordináták meghatározása
         private string GetCell(int x, int y)
         {
             string ExcelCoordinate = "";
@@ -120,9 +122,8 @@ namespace tokcz
         //Excel formázása
         private void FormatExcel()
         {
-            //Utolsó sor
+            //Tábla méretének meghatározása
             int LastRowID = xlSheet.UsedRange.Rows.Count;
-            //Utolsó oszlop
             int LastColID = xlSheet.UsedRange.Columns.Count;
             //Fejléc meghatározása
             Excel.Range headerRange = xlSheet.get_Range(GetCell(1,1), GetCell(1,LastColID));
