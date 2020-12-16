@@ -34,8 +34,8 @@ namespace tokcz
         {
             //Betöltő függvények eredményeinek betöltése a megfelelő listába
             //Futtatáskor a Browse gomb feletti TextBoxból veszi a fájlnevet
-            Educations = GetEducations(@textBoxfile.Text.ToString());
-            FinishProbabilities = GetFinishProbabilities(@"C:\Temp\atlag.csv");
+            Educations = GetEducations(@"C:\temp\suli.csv");
+            FinishProbabilities = GetFinishProbabilities(@"C:\temp\atlag.csv");
 
             //Záróév megváltoztatása
             for (int i = 1965; i < numericUpDown1.Value; i++)
@@ -100,7 +100,7 @@ namespace tokcz
                     {
                         Age = int.Parse(line[0]),
                         NbrOfTerms = int.Parse(line[1]),
-                        Probability = double.Parse(line[2])
+                        P = double.Parse(line[2])
                     });
                 }
             }
@@ -119,7 +119,7 @@ namespace tokcz
             {
                 double Probability = (from x in FinishProbabilities
                                       where x.Age == age
-                                      select x.Probability).FirstOrDefault();
+                                      select x.P).FirstOrDefault();
 
                 //Befejezik-e az iskolát?
                 if (rng.NextDouble() <= Probability)
@@ -144,16 +144,6 @@ namespace tokcz
             }
         }
 
-        private void buttonstart_Click(object sender, EventArgs e)
-        {
-            //Szimuláció indítása előtt a RichTextBox és a lélekszám listák tartalmainak ürítése
-            NbrOfMalesInYears.Clear();
-            NbrOfFemalesInYears.Clear();
-            richTextBox1.Clear();
-            Simulation();
-            DisplayResults();
-        }
-
         private void buttonbrowse_Click(object sender, EventArgs e)
         {
             //Ok gomb lenyomása után a felette lévő Textboxba kerül a suli fájl elérési útvonala
@@ -163,6 +153,16 @@ namespace tokcz
             {
                 textBoxfile.Text = ofd.FileName;
             }
+        }
+
+        private void buttonstart_Click(object sender, EventArgs e)
+        {
+            //Szimuláció indítása előtt a RichTextBox és a lélekszám listák tartalmainak ürítése
+            NbrOfMalesInYears.Clear();
+            NbrOfFemalesInYears.Clear();
+            richTextBox1.Clear();
+            Simulation();
+            DisplayResults();
         }
     }
 }

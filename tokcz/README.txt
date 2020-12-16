@@ -25,6 +25,4 @@ Indításkor-->
 - A "Böngészés" gomb lenyomásával tudom kiválasztani a beolvasandó .csv file-t, mely a "Hallgatók" label melletti textboxban fogja mejeleníteni a filehoz szükséges elérési utat 
 - Az "Indítás" gomb lenyomásával és a "Záróév" melletti numericUpandDown segítségével kezdhetjük a modellezést
 
-Eredmény -->
-
 

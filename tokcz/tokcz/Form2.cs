@@ -193,7 +193,7 @@ namespace tokcz
                 while(!sr.EndOfStream)
                 {
                     //Ez a sor egy sor nevű tömbbe olvassa be a fájl következő sorát úgy, hogy a pontosvesszők mentén feldarabolja azt
-                    string[] sor = sr.ReadLine().Split(',');
+                    string[] sor = sr.ReadLine().Split(';');
 
                     //Példányosítjuk a következő Data-t
                     Data d = new Data();

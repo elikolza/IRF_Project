@@ -10,6 +10,6 @@ namespace tokcz.Entities
     {
         public int Age { get; set; }
         public int NbrOfTerms { get; set; }
-        public double Probability { get; set; }
+        public double P { get; set; }
     }
 }
